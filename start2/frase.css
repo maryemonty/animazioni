@@ -17,27 +17,41 @@
 
 .parole{
     color: #6a889c;
-    transform: translate(-50%, -50%);
-    animation: fade 8s infinite both ease-in-out;
+    position: relative;
 }
 
-.parole:nth-of-type(1)
-{
-    animation-delay: -30s;
-}
-.parole:nth-of-type(2)
-{
-    animation-delay: -10s;
-}
-.parole:nth-of-type(3)
-{
-    animation-delay: -2s;
+.parole i{
+    position: absolute;
+    opacity: 0;
+    left: 10px;
+    width: 100px;
 }
 
-@keyframes fade {
-    from{opacity: 0;}
-    50%{opacity: 1}
-    to{opacity:0}
+.parole i:nth-of-type(1)
+{
+    opacity: 1;
+    transform: translateX(1px);
+    animation:  5s ease-out 1s 1 forwards fadeOut
 }
+.parole i:nth-of-type(2)
+{
+    animation:  2s ease-in 5s infinite both fadeIn;
+}
+.parole i:nth-of-type(3)
+{
+    animation:  2s ease-in 10s infinite both fadeIn;
+}
+
+@keyframes fadeOut {
+    from{opacity: 0; transform: translateY(1px);}
+    to{opacity:0; transform: translateY(10px);}
+}
+
+@keyframes fadeIn {
+    from{opacity: 0; transform: translateY(-10px);}
+    50%{opacity: 1; transform: translateY(1px);}
+    to{opacity:0; transform: translateY(10px);}
+}
+
 
 
